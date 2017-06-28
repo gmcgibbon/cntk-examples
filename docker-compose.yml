@@ -1,0 +1,9 @@
+version: '3'
+services:
+  nn:
+    build: .
+    command: bash -c "source /cntk/activate-cntk && jupyter notebook --no-browser --allow-root --port=8889 --ip=0.0.0.0 --notebook-dir=/usr/src/nn"
+    volumes:
+      - .:/usr/src/nn
+    ports:
+      - "8889:8889"
